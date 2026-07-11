@@ -42,14 +42,14 @@ namespace Arcanoid {
                 state.colorB = color.b;
             }
 
-            auto* strongBlock = dynamic_cast<StrongBlock*>(block.get());
+            /*auto* strongBlock = dynamic_cast<StrongBlock*>(block.get());
             if (strongBlock) {
                 state.hitsRemaining = strongBlock->getHitsRemaining();
                 sf::Color color = strongBlock->getColor();
                 state.colorR = color.r;
                 state.colorG = color.g;
                 state.colorB = color.b;
-            }
+            }*/
 
             auto* glassBlock = dynamic_cast<GlassBlock*>(block.get());
             if (glassBlock) {

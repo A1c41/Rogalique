@@ -22,10 +22,10 @@ namespace Arcanoid {
         std::unique_ptr<GameObject> createBlock(float x, float y, sf::Color color) override {
             int type = rand() % 100;
 
-            if (type < 15) {
+            /*if (type < 15) {
                 return std::make_unique<StrongBlock>(x, y, color, 2 + rand() % 3);
             }
-            else if (type < 25) {
+            else */if (type < 25) {
                 return std::make_unique<GlassBlock>(x, y);
             }
             else if (type < 30) {

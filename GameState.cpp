@@ -233,7 +233,7 @@ namespace Arcanoid {
 
             if (ball->getBounds().intersects(block->getBounds())) {
                 bool isGlass = dynamic_cast<GlassBlock*>(block.get()) != nullptr;
-                bool isStrong = dynamic_cast<StrongBlock*>(block.get()) != nullptr;
+                bool isStrong = false;//dynamic_cast<StrongBlock*>(block.get()) != nullptr;
                 bool isIndestructible = dynamic_cast<IndestructibleBlock*>(block.get()) != nullptr;
 
                 if (isIndestructible) {
@@ -256,7 +256,7 @@ namespace Arcanoid {
                 int pointsEarned = 0;
                 bool blockDestroyed = false;
 
-                if (isStrong) {
+                /*if (isStrong) {
                     auto* strongBlock = static_cast<StrongBlock*>(block.get());
                     strongBlock->hit();
 
@@ -280,7 +280,7 @@ namespace Arcanoid {
                         }
                     }
                 }
-                else if (isGlass) {
+                else */if (isGlass) {
                     if (static_cast<GlassBlock*>(block.get())->isAlive()) {
                         static_cast<GlassBlock*>(block.get())->destroy();
                         blockDestroyed = true;
@@ -354,7 +354,7 @@ namespace Arcanoid {
                         for (size_t i = 0; i < blocks.size(); ++i) {
                             auto* blockPtr = static_cast<Block*>(blocks[i].get());
                             bool isGlass = dynamic_cast<GlassBlock*>(blocks[i].get()) != nullptr;
-                            bool isStrong = dynamic_cast<StrongBlock*>(blocks[i].get()) != nullptr;
+                            bool isStrong = false;//dynamic_cast<StrongBlock*>(blocks[i].get()) != nullptr;
                             bool isIndestructible = dynamic_cast<IndestructibleBlock*>(blocks[i].get()) != nullptr;
 
                             blocks[i]->setPosition(blockStates[i].x, blockStates[i].y);
@@ -365,14 +365,14 @@ namespace Arcanoid {
 
                             if (blockStates[i].isActive) {
                                 if (!blockPtr->isAlive() || isStrong || isGlass) {
-                                    if (isStrong) {
+                                    /*if (isStrong) {
                                         auto newBlock = std::make_unique<StrongBlock>(
                                             blockStates[i].x, blockStates[i].y,
                                             color, blockStates[i].hitsRemaining
                                         );
                                         blocks[i] = std::move(newBlock);
                                     }
-                                    else if (isGlass) {
+                                    else */if (isGlass) {
                                         auto newBlock = std::make_unique<GlassBlock>(
                                             blockStates[i].x, blockStates[i].y
                                         );
@@ -385,12 +385,12 @@ namespace Arcanoid {
                                         blocks[i] = std::move(newBlock);
                                     }
                                 }
-                                else {
+                                /*else {
                                     if (isStrong) {
                                         auto* strongBlock = static_cast<StrongBlock*>(blocks[i].get());
                                         strongBlock->setHitsRemaining(blockStates[i].hitsRemaining);
                                     }
-                                }
+                                }*/
                             }
                             else {
                                 if (blockPtr->isAlive()) {
