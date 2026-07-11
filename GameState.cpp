@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <sstream>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     GameState::GameState() : score(0), lives(3),
         paused(false), victory(false),
@@ -19,7 +19,7 @@ namespace Arcanoid {
         showSaveMessage(false), saveMessageTimer(0.0f) {
 
         window = std::make_unique<sf::RenderWindow>(
-            sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Arcanoid");
+            sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Rogalique");
         window->setFramerateLimit(60);
 
         font = std::make_unique<sf::Font>();
@@ -536,7 +536,7 @@ namespace Arcanoid {
     }
 
     void GameState::renderMenu() {
-        sf::Text title("ARCANOID", *font, 72);
+        sf::Text title("ROGALIQUE", *font, 72);
         title.setFillColor(sf::Color::White);
         title.setPosition(WINDOW_WIDTH / 2.0f - 150.0f, 80.0f);
         window->draw(title);

@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class GameObject {
     protected:

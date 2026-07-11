@@ -7,7 +7,7 @@
 #include "IndestructibleBlock.h"
 #include <fstream>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     GameMemento::GameMemento() : score(0), lives(3) {}
 

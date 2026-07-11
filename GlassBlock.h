@@ -1,7 +1,7 @@
 #pragma once
 #include "Block.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class GlassBlock : public Block {
     private:

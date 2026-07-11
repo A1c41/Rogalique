@@ -2,7 +2,7 @@
 #include <cmath>
 #include <cstdlib>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     Ball::Ball(float initialSpeed) : speed(initialSpeed) {
         size = sf::Vector2f(14.0f, 14.0f);

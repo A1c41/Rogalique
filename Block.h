@@ -3,7 +3,7 @@
 #include "Constants.h"
 #include <SFML/Graphics.hpp>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class Block : public GameObject {
     protected:

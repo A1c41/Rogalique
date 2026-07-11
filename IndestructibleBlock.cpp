@@ -1,6 +1,6 @@
 #include "IndestructibleBlock.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     IndestructibleBlock::IndestructibleBlock(float x, float y)
         : Block(x, y, sf::Color(80, 80, 80)), isActive(true) {

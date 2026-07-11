@@ -5,7 +5,7 @@
 #include <memory>
 #include <vector>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class Paddle;
     class Ball;

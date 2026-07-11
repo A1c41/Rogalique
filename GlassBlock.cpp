@@ -1,6 +1,6 @@
 #include "GlassBlock.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     GlassBlock::GlassBlock(float x, float y)
         : Block(x, y, sf::Color(200, 230, 255, 180)), isActive(true) {

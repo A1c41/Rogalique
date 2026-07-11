@@ -10,7 +10,7 @@
 #include "SaveSystem.h"
 #include "Bonus.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class GameState {
     private:

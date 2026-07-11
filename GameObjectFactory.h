@@ -7,7 +7,7 @@
 #include "GlassBlock.h"
 #include "IndestructibleBlock.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class GameObjectFactory : public IGameObjectFactory {
     public:

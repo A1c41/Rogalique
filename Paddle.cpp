@@ -1,6 +1,6 @@
 #include "Paddle.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     Paddle::Paddle() : speed(350.0f), moveLeft(false), moveRight(false) {
         size = sf::Vector2f(120.0f, 22.0f);

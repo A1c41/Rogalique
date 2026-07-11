@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <cmath>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     FireBallEffect::FireBallEffect() : duration(8.0f), originalSpeed(0), isActive(false) {}
 

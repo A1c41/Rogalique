@@ -7,7 +7,7 @@
 #include "Constants.h"
 #include "Bonus.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class GameMemento {
     public:

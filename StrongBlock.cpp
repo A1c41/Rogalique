@@ -1,6 +1,6 @@
 #include "StrongBlock.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     StrongBlock::StrongBlock(float x, float y, sf::Color color, int hits)
         : Block(x, y, color), maxHits(hits), hitsRemaining(hits) {

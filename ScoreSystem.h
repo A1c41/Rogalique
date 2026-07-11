@@ -3,7 +3,7 @@
 #include <string>
 #include "Constants.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     struct HighScore {
         int score;

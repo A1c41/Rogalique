@@ -1,6 +1,6 @@
 #include "Block.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     Block::Block(float x, float y, sf::Color color) : isActive(true), color(color) {
         size = sf::Vector2f(60.0f, 25.0f);

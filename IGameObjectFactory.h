@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class IGameObjectFactory {
     public:

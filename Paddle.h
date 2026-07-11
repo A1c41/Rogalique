@@ -2,7 +2,7 @@
 #include "GameObject.h"
 #include "Constants.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class Paddle : public GameObject {
     private:

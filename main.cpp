@@ -4,7 +4,7 @@
 
 int main() {
     srand(static_cast<unsigned>(time(nullptr)));
-    Arcanoid::GameState game;
+    Rogalique::GameState game;
     sf::Clock clock;
 
     while (game.isRunning()) {

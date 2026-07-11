@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <ctime>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     ScoreSystem::ScoreSystem() : currentScore(0) {
         scoresFile = RESOURCES + "highscores.txt";

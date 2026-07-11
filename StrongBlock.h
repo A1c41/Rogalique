@@ -3,7 +3,7 @@
 #include "Constants.h"
 #include <vector>
 
-namespace Arcanoid {
+namespace Rogalique {
 
     class StrongBlock : public Block {
     private:
