@@ -3,5 +3,5 @@
 #include "Constants.h"
 #include <vector>
 
-namespace Arcanoid {
+namespace Rogalique {
 }
