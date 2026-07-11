@@ -1,4 +1,4 @@
 #include "StrongBlock.h"
 
-namespace Arcanoid {
+namespace Rogalique {
 }
