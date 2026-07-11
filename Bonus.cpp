@@ -35,14 +35,14 @@ namespace Rogalique {
     FragileBlocksEffect::FragileBlocksEffect() : duration(10.0f) {}
 
     void FragileBlocksEffect::apply(Paddle* paddle, Ball* ball, std::vector<std::unique_ptr<GameObject>>& blocks) {
-        for (auto& block : blocks) {
+        /*for (auto& block : blocks) {
             auto* strongBlock = dynamic_cast<StrongBlock*>(block.get());
             if (strongBlock) {
                 while (strongBlock->getHitsRemaining() > 1) {
                     strongBlock->hit();
                 }
             }
-        }
+        }*/
     }
 
     void FragileBlocksEffect::remove(Paddle* paddle, Ball* ball, std::vector<std::unique_ptr<GameObject>>& blocks) {}
