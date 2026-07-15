@@ -1,8 +1,13 @@
 #include "GameState.h"
 #include <cstdlib>
 #include <ctime>
+#include "Engine/Engine.h"
 
 int main() {
+    Engine engine;
+    engine.Initialize();
+    engine.Run();
+
     srand(static_cast<unsigned>(time(nullptr)));
     Rogalique::GameState game;
     sf::Clock clock;
