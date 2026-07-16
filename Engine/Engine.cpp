@@ -2,17 +2,20 @@
 #include "Engine.h"
 #include <iostream>
 
-Engine::Engine()
+namespace GameEngine
 {
+	Engine::Engine()
+	{
 
-}
+	}
 
-void Engine::Initialize()
-{
-	std::cout << "Движок инициализирован" << std::endl;
-}
+	void Engine::Initialize()
+	{
+		std::cout << "Engine init!" << std::endl;
+	}
 
-void Engine::Run()
-{
-	std::cout << "Движок запущен!" << std::endl;
+	void Engine::Run()
+	{
+		std::cout << "Engin run!" << std::endl;
+	}
 }

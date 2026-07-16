@@ -4,7 +4,7 @@
 #include "Engine/Engine.h"
 
 int main() {
-    Engine engine;
+    GameEngine::Engine engine;
     engine.Initialize();
     engine.Run();
 

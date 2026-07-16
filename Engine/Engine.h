@@ -1,15 +1,23 @@
 #ifndef ENGINE_H
 #define ENGINE_H
-#ifndef ENGINE_EXPORTS
+
+#ifdef ENGINE_EXPORTS
 #define ENGINE_API __declspec(dllexport)
 #else
 #define ENGINE_API __declspec(dllimport)
 #endif
-class ENGINE_API Engine
+
+#include <SFML/Graphics.hpp>
+
+namespace GameEngine
 {
-public:
-	Engine();
-	void Initialize();
-	void Run();
-};
+	class ENGINE_API Engine
+	{
+	public:
+		Engine();
+		void Initialize();
+		void Run();
+	};
+}
+
 #endif
