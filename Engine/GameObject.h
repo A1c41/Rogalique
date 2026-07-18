@@ -1,35 +1,67 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 
-namespace Rogalique {
+#include "framework.h"
+#include <vector>
+#include <iostream>
 
-    class GameObject {
-    protected:
-        sf::Vector2f position;
-        sf::Vector2f size;
-        sf::Sprite sprite;
+namespace GameEngine
+{
+	class TransformComponent;
+	class Component;
 
-    public:
-        virtual ~GameObject() = default;
-        virtual void update(float dt) = 0;
-        virtual void draw(sf::RenderWindow& window) const = 0;
-        virtual void handleInput(const sf::Event& event) {}
+	class ENGINE_API GameObject
+	{
+	public:
+		GameObject();
+		~GameObject();
 
-        virtual sf::FloatRect getBounds() const {
-            return sprite.getGlobalBounds();
-        }
+		void Update(float deltaTime);
+		void Render();
 
-        void setPosition(float x, float y) {
-            position = sf::Vector2f(x, y);
-            sprite.setPosition(x, y);
-        }
+		template <typename T>
+		T* AddComponent()
+		{
+			if constexpr (!std::is_base_of<Component, T>::value)
+			{
+				std::cout << "T must be derived from Component." << std::endl;
+				return nullptr;
+			}
 
-        void setSize(const sf::Vector2f& newSize) {
-            size = newSize;
-        }
+			if constexpr (std::is_same<T, TransformComponent>::value)
+			{
+				if (GetComponent<TransformComponent>() != nullptr)
+				{
+					std::cout << "Can't add Transform, because it will break the engine loop." << std::endl;
+					return nullptr;
+				}
+			}
 
-        sf::Vector2f getPosition() const { return position; }
-        sf::Vector2f getSize() const { return size; }
-    };
+			T* newComponent = new T(this);
+			components.push_back(newComponent);
+			std::cout << "Add new component: " << newComponent << std::endl;
+			return newComponent;
+		}
 
+		void RemoveComponent(Component* component)
+		{
+			components.erase(std::remove_if(components.begin(), components.end(), [component](Component* obj) { return obj == component; }), components.end());
+			delete component;
+			std::cout << "Deleted component";
+		}
+
+		template <typename T>
+		T* GetComponent() const
+		{
+			for (const auto& component : components)
+			{
+				if (auto casted = dynamic_cast<T*>(component))
+				{
+					return casted;
+				}
+			}
+			return nullptr;
+		}
+	private:
+		std::vector<Component*> components = {};
+	};
 }
