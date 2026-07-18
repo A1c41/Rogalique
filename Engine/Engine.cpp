@@ -26,7 +26,7 @@ namespace GameEngine
 		while (RenderSystem::Instance()->GetMainWindow().isOpen())
 		{
 			sf::Time dt = gameClock.restart();
-			float deltaTime = dt.asSeconds();
+			float fps = dt.asSeconds();
 
 			while (RenderSystem::Instance()->GetMainWindow().pollEvent(event))
 			{
@@ -43,7 +43,8 @@ namespace GameEngine
 
 			RenderSystem::Instance()->GetMainWindow().clear();
 
-			GameWorld::Instance()->Update(deltaTime);
+			GameWorld::Instance()->Update(fps);
+			GameWorld::Instance()->FixedUpdate(fps);
 			GameWorld::Instance()->Render();
 			GameWorld::Instance()->LateUpdate();
 

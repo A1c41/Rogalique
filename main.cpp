@@ -2,46 +2,25 @@
 #include "Player.h"
 #include "Engine.h"
 #include "ResourceSystem.h"
+#include "SoundSystem.h"
 #include "DeveloperLevel.h"
+#include "Matrix2D.h"
 
 using namespace Rogalique;
 
 int main()
 {
-	GameEngine::RenderSystem::Instance()->SetMainWindow(new sf::RenderWindow(sf::VideoMode(1280, 720), "Rogalique"));
-	GameEngine::ResourceSystem::Instance()->LoadTexture("ball", "Resources//ball.png");
+    GameEngine::RenderSystem::Instance()->SetMainWindow(new sf::RenderWindow(sf::VideoMode(1280, 720), "Rogalique"));
 
-	auto developerLevel = std::make_shared<DeveloperLevel>();
-	developerLevel->Start();
+    GameEngine::ResourceSystem::Instance()->LoadTexture("hero", "Resources//hero.png");
+    GameEngine::ResourceSystem::Instance()->LoadTexture("enemy", "Resources//enemy.png");
+    GameEngine::ResourceSystem::Instance()->LoadTexture("wall", "Resources//wall.png");
+    GameEngine::ResourceSystem::Instance()->LoadTexture("floor", "Resources//floor.png");
 
-	GameEngine::Engine::Instance()->Run();
+    auto developerLevel = std::make_shared<DeveloperLevel>();
+    developerLevel->Start();
 
-	return 0;
+    GameEngine::Engine::Instance()->Run();
+
+    return 0;
 }
-
-
-//#include "GameState.h"
-//#include <cstdlib>
-//#include <ctime>
-//#include "Engine/Engine.h"
-//
-//int main() {
-//    GameEngine::Engine engine;
-//    engine.Initialize();
-//    engine.Run();
-//
-//    srand(static_cast<unsigned>(time(nullptr)));
-//    Rogalique::GameState game;
-//    sf::Clock clock;
-//
-//    while (game.isRunning()) {
-//        float dt = clock.restart().asSeconds();
-//        sf::Event event;
-//        while (game.getWindow().pollEvent(event)) {
-//            game.handleInput(event);
-//        }
-//        game.update(dt);
-//        game.render();
-//    }
-//    return 0;
-//}

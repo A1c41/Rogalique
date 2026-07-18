@@ -1,9 +1,9 @@
 #pragma once
+#include <cmath>
 
 namespace GameEngine
 {
 	template<typename T>
-
 	struct Vector2D
 	{
 		T x = (T)0;
@@ -21,14 +21,14 @@ namespace GameEngine
 			y = newY;
 		}
 
-		float GetLength()
+		float GetLength() const
 		{
-			return sqrtf(x * x + y * y);
+			return sqrtf((float)(x * x + y * y));
 		}
 
-		float DotProduct(const Vector2D<T>& vector)
+		float DotProduct(const Vector2D<T>& vector) const
 		{
-			return x * vector.x + y * vector.y;
+			return (float)(x * vector.x + y * vector.y);
 		}
 	};
 
@@ -88,5 +88,11 @@ namespace GameEngine
 	U Convert(const V& v)
 	{
 		return { static_cast<decltype(U::x)>(v.x), static_cast<decltype(U::y)>(v.y) };
+	}
+
+	template<typename U, typename V>
+	U ConvertSFML(const V& v)
+	{
+		return { static_cast<decltype(U::x)>(v.x), static_cast<decltype(U::y)>(-v.y) };
 	}
 }

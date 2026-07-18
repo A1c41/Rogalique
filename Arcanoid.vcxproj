@@ -145,15 +145,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DeveloperLevel.cpp" />
-    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="LevelGenerator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="DeveloperLevel.h" />
-    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="LevelGenerator.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Engine\Engine.vcxproj">

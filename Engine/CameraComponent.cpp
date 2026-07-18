@@ -7,7 +7,7 @@ namespace GameEngine
 {
 	CameraComponent::CameraComponent(GameObject* gameObject) : Component(gameObject)
 	{
-		view = new sf::View(sf::FloatRect(0, 0, 800, -600));
+		view = new sf::View(sf::FloatRect(0, 0, 800, 600));
 		transform = gameObject->GetComponent<TransformComponent>();
 	}
 
@@ -19,10 +19,13 @@ namespace GameEngine
 	void CameraComponent::Update(float fps)
 	{
 		auto position = transform->GetWorldPosition();
-		auto rotation = transform->GetWorldRotation();
 
-		view->setCenter(Convert<sf::Vector2f, Vector2Df>(position));
-		view->setRotation(rotation);
+		sf::Vector2f sfmlPos;
+		sfmlPos.x = position.x;
+		sfmlPos.y = -position.y;
+
+		view->setCenter(sfmlPos);
+		view->setRotation(-transform->GetWorldRotation());
 
 		window->setView(*view);
 	}
@@ -45,14 +48,13 @@ namespace GameEngine
 		if (newZoom <= 0)
 		{
 			std::cout << "Not allowed zoom lesser or equal than zero." << std::endl;
+			return;
 		}
-
 		view->zoom(newZoom);
 	}
 
 	void CameraComponent::SetBaseResolution(int width, int height)
 	{
-		view->reset(sf::FloatRect(0, 0, width, -height));
+		view->reset(sf::FloatRect(0, 0, width, height));
 	}
 }
-

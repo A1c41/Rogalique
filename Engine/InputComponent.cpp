@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "InputComponent.h"
+#include "GameObject.h"
+#include "RigidbodyComponent.h"
 
 namespace GameEngine
 {
@@ -8,29 +10,43 @@ namespace GameEngine
 
 	}
 
-	void InputComponent::Update(float fps)
-	{
-		verticalAxis = 0.f;
-		horizontalAxis = 0.f;
+    void InputComponent::Update(float fps)
+    {
+        verticalAxis = 0.f;
+        horizontalAxis = 0.f;
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{
-			verticalAxis += 1.0f;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		{
-			verticalAxis -= 1.0f;
-		}
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        {
+            verticalAxis += 1.0f;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        {
+            verticalAxis -= 1.0f;
+        }
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			horizontalAxis += 1.0f;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		{
-			horizontalAxis -= 1.0f;
-		}
-	}
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        {
+            horizontalAxis += 1.0f;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        {
+            horizontalAxis -= 1.0f;
+        }
+
+        if (horizontalAxis != 0.f && verticalAxis != 0.f)
+        {
+            float length = sqrtf(horizontalAxis * horizontalAxis + verticalAxis * verticalAxis);
+            horizontalAxis /= length;
+            verticalAxis /= length;
+        }
+
+        auto rigidbody = gameObject->GetComponent<RigidbodyComponent>();
+        if (rigidbody)
+        {
+            float speed = 200.f;
+            rigidbody->SetLinearVelocity({ horizontalAxis * speed * fps, verticalAxis * speed * fps });
+        }
+    }
 
 	void InputComponent::Render()
 	{
