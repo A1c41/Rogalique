@@ -22,7 +22,7 @@ namespace GameEngine
         {
             isChasing = true;
             Vector2Df direction = GetDirectionToTarget();
-            rigidbody->SetLinearVelocity(direction * speed);
+            rigidbody->SetLinearVelocity(direction * speed * fps);
         }
         else
         {
