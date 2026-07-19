@@ -11,6 +11,7 @@ namespace Rogalique
     DeveloperLevel::DeveloperLevel()
     {
         levelGenerator = std::make_shared<LevelGenerator>();
+        levelGenerator->LoadLevels("Resources/Levels");
     }
 
     void DeveloperLevel::Start()
@@ -19,19 +20,44 @@ namespace Rogalique
         SoundSystem::Instance()->PlayMusic("background", true);
         SoundSystem::Instance()->SetMusicVolume("background", 70.0f);
 
-        levelGenerator->GenerateLevel(playerStartPosition, 25, 15, 32);
+        LevelData levelData = levelGenerator->GetRandomLevel();
+
+        if (!levelGenerator->GenerateLevelFromFile(levelData))
+        {
+            levelGenerator->GenerateLevel(playerStartPosition, 25, 15, 32);
+        }
+
+        Vector2Df playerPos = levelGenerator->GetPlayerStart();
+        if (playerPos.x == 0 && playerPos.y == 0)
+        {
+            playerPos = playerStartPosition;
+        }
 
         player = std::make_shared<Player>();
         auto playerTransform = player->GetGameObject()->GetComponent<TransformComponent>();
         if (playerTransform)
         {
-            playerTransform->SetWorldPosition(playerStartPosition);
+            playerTransform->SetWorldPosition(playerPos);
         }
 
-        enemy = std::make_shared<Enemy>(
-            player->GetGameObject(),
-            enemyStartPosition
-        );
+        auto enemyPositions = levelGenerator->GetEnemyStarts();
+
+        if (enemyPositions.empty())
+        {
+            enemyPositions.push_back(enemyStartPosition);
+        }
+
+        enemies.clear();
+        for (const auto& enemyPos : enemyPositions)
+        {
+            auto enemy = std::make_shared<Enemy>(
+                player->GetGameObject(),
+                enemyPos
+            );
+            enemies.push_back(enemy);
+        }
+
+        std::cout << "Created " << enemies.size() << " enemies" << std::endl;
     }
 
     void DeveloperLevel::Restart()
@@ -47,7 +73,7 @@ namespace Rogalique
         GameWorld::Instance()->Clear();
 
         player.reset();
-        enemy.reset();
+        enemies.clear();
         levelGenerator->Clear();
     }
 }

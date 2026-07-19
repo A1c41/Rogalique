@@ -4,6 +4,7 @@
 #include <iostream>
 #include <array>
 #include <memory>
+#include <vector>
 #include "Scene.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -23,7 +24,7 @@ namespace Rogalique
 
     private:
         std::shared_ptr<Player> player;
-        std::shared_ptr<Enemy> enemy;
+        std::vector<std::shared_ptr<Enemy>> enemies;
         std::shared_ptr<LevelGenerator> levelGenerator;
 
         Vector2Df playerStartPosition = { 400, 360 };

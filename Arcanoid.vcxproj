@@ -148,6 +148,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="LevelGenerator.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Floor.h" />
     <ClInclude Include="LevelGenerator.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
