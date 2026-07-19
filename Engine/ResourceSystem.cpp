@@ -23,14 +23,17 @@ namespace GameEngine
 			textures.emplace(name, newTexture);
 		}
 	}
+
 	const sf::Texture* ResourceSystem::GetTextureShared(const std::string& name) const
 	{
 		return textures.find(name)->second;
 	}
+
 	sf::Texture* ResourceSystem::GetTextureCopy(const std::string& name) const
 	{
 		return new sf::Texture(*textures.find(name)->second);
 	}
+
 	void ResourceSystem::DeleteSharedTexture(const std::string& name)
 	{
 		auto texturePair = textures.find(name);
@@ -82,24 +85,28 @@ namespace GameEngine
 			textureMaps.emplace(name, *textureMapElements);
 		}
 	}
+
 	const sf::Texture* ResourceSystem::GetTextureMapElementShared(const std::string& name, int elementIndex) const
 	{
 		auto textureMap = textureMaps.find(name);
 		auto textures = textureMap->second;
 		return textures[elementIndex];
 	}
+
 	sf::Texture* ResourceSystem::GetTextureMapElementCopy(const std::string& name, int elementIndex) const
 	{
 		auto textureMap = textureMaps.find(name);
 		auto textures = textureMap->second;
 		return new sf::Texture(*textures[elementIndex]);
 	}
+
 	int ResourceSystem::GetTextureMapElementsCount(const std::string& name) const
 	{
 		auto textureMap = textureMaps.find(name);
 		auto textures = textureMap->second;
 		return textures.size();
 	}
+
 	void ResourceSystem::DeleteSharedTextureMap(const std::string& name)
 	{
 		auto textureMap = textureMaps.find(name);
@@ -133,6 +140,7 @@ namespace GameEngine
 			DeleteSharedTexture(key);
 		}
 	}
+
 	void ResourceSystem::DeleteAllTextureMaps()
 	{
 		std::vector<std::string> keysToDelete;

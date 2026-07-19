@@ -88,59 +88,49 @@ namespace GameEngine
                         continue;
                     }
 
-                    float halfWidth = intersection.width / 2.0f;
-                    float halfHeight = intersection.height / 2.0f;
+                    sf::Vector2f centerA(colliders[i]->bounds.left + colliders[i]->bounds.width / 2.0f,
+                        colliders[i]->bounds.top + colliders[i]->bounds.height / 2.0f);
+                    sf::Vector2f centerB(colliders[j]->bounds.left + colliders[j]->bounds.width / 2.0f,
+                        colliders[j]->bounds.top + colliders[j]->bounds.height / 2.0f);
+
+                    sf::Vector2f direction = centerB - centerA;
 
                     if (intersection.width < intersection.height)
                     {
+                        float sign = (direction.x > 0) ? 1.0f : -1.0f;
+
                         if (!aKinematic)
                         {
-                            if (colliders[i]->bounds.left < colliders[j]->bounds.left)
-                            {
-                                transformA->MoveBy({ -intersection.width, 0 });
-                            }
-                            else
-                            {
-                                transformA->MoveBy({ intersection.width, 0 });
-                            }
+                            transformA->MoveBy({ -sign * intersection.width, 0 });
+                            Vector2Df vel = bodyA->GetLinearVelocity();
+                            vel.x = 0;
+                            bodyA->SetLinearVelocity(vel);
                         }
-
                         if (!bKinematic)
                         {
-                            if (colliders[j]->bounds.left < colliders[i]->bounds.left)
-                            {
-                                transformB->MoveBy({ -intersection.width, 0 });
-                            }
-                            else
-                            {
-                                transformB->MoveBy({ intersection.width, 0 });
-                            }
+                            transformB->MoveBy({ sign * intersection.width, 0 });
+                            Vector2Df vel = bodyB->GetLinearVelocity();
+                            vel.x = 0;
+                            bodyB->SetLinearVelocity(vel);
                         }
                     }
                     else
                     {
+                        float sign = (direction.y > 0) ? 1.0f : -1.0f;
+
                         if (!aKinematic)
                         {
-                            if (colliders[i]->bounds.top < colliders[j]->bounds.top)
-                            {
-                                transformA->MoveBy({ 0, -intersection.height });
-                            }
-                            else
-                            {
-                                transformA->MoveBy({ 0, intersection.height });
-                            }
+                            transformA->MoveBy({ 0, sign * intersection.height });
+                            Vector2Df vel = bodyA->GetLinearVelocity();
+                            vel.y = 0;
+                            bodyA->SetLinearVelocity(vel);
                         }
-
                         if (!bKinematic)
                         {
-                            if (colliders[j]->bounds.top < colliders[i]->bounds.top)
-                            {
-                                transformB->MoveBy({ 0, -intersection.height });
-                            }
-                            else
-                            {
-                                transformB->MoveBy({ 0, intersection.height });
-                            }
+                            transformB->MoveBy({ 0, -sign * intersection.height });
+                            Vector2Df vel = bodyB->GetLinearVelocity();
+                            vel.y = 0;
+                            bodyB->SetLinearVelocity(vel);
                         }
                     }
 

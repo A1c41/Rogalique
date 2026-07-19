@@ -10,6 +10,7 @@ namespace GameEngine
 		name = "GameObject";
 		AddComponent<TransformComponent>();
 	}
+
 	GameObject::GameObject(std::string newName)
 	{
 		name = newName;
@@ -52,6 +53,7 @@ namespace GameEngine
 			component->Update(deltaTime);
 		}
 	}
+	
 	void GameObject::Render()
 	{
 		for (auto& component : components)
@@ -64,6 +66,7 @@ namespace GameEngine
 	{
 		children.push_back(child);
 	}
+
 	void GameObject::RemoveChild(GameObject* child)
 	{
 		children.erase(std::remove_if(children.begin(), children.end(), [child](GameObject* obj) { return obj == child; }), children.end());

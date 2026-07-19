@@ -42,10 +42,12 @@ namespace GameEngine
 	{
 		linearVelocity = newLinearVelocity;
 	}
+	
 	void RigidbodyComponent::AddLinearVelocity(Vector2Df linearOffset)
 	{
 		linearVelocity = linearVelocity + linearOffset;
 	}
+	
 	Vector2Df RigidbodyComponent::GetLinearVelocity() const
 	{
 		return linearVelocity;
@@ -55,10 +57,12 @@ namespace GameEngine
 	{
 		angleVelocity = newAngleVelocity;
 	}
+	
 	void RigidbodyComponent::AddAngleVelocity(float angleOffset)
 	{
 		angleVelocity += angleOffset;
 	}
+	
 	float RigidbodyComponent::GetAngleVelocity() const
 	{
 		return angleVelocity;
@@ -68,6 +72,7 @@ namespace GameEngine
 	{
 		linearDamping = newLinearDamping;
 	}
+	
 	float RigidbodyComponent::GetLinearDamping() const
 	{
 		return linearDamping;
@@ -77,6 +82,7 @@ namespace GameEngine
 	{
 		angleDamping = newAngleDamping;
 	}
+	
 	float RigidbodyComponent::GetAngleDamping() const
 	{
 		return angleDamping;
@@ -86,6 +92,7 @@ namespace GameEngine
 	{
 		isKinematic = newIsKinematic;
 	}
+	
 	bool RigidbodyComponent::GetKinematic() const
 	{
 		return isKinematic;

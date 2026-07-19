@@ -87,11 +87,9 @@ namespace GameEngine
     {
         for (auto& pair : musicMap)
         {
-            // Если музыка играет, обновляем громкость
             if (pair.second->getStatus() == sf::Music::Playing)
             {
                 float currentVolume = pair.second->getVolume();
-                // Сохраняем относительную громкость
                 float relativeVolume = currentVolume / 100.0f;
                 pair.second->setVolume(masterVolume * relativeVolume);
             }
@@ -131,7 +129,6 @@ namespace GameEngine
             sf::Sound* sound = new sf::Sound();
             sound->setBuffer(*it->second);
 
-            // Применяем masterVolume
             float normalizedVolume = (volume / 100.0f) * masterVolume;
             sound->setVolume(normalizedVolume);
 

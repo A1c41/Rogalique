@@ -17,6 +17,7 @@ namespace GameEngine
 		sprite = gameObject->GetComponent<SpriteRenderComponent>()->GetSprite();
 		PhysicsSystem::Instance()->Subscribe(this);
 	}
+	
 	SpriteColliderComponent::~SpriteColliderComponent()
 	{
 		if (&bounds != nullptr)
@@ -30,6 +31,7 @@ namespace GameEngine
 	{
 		bounds = sprite->getGlobalBounds();
 	}
+	
 	void SpriteColliderComponent::Render()
 	{
 		sf::RectangleShape rectangle(sf::Vector2f(bounds.width, bounds.height));

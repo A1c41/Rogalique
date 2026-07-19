@@ -17,6 +17,7 @@ namespace GameEngine
 	{
 		onCollisionActions.push_back(onCollisionAction);
 	}
+	
 	void ColliderComponent::UnsubscribeCollision(std::function<void(Collision)> onCollisionAction)
 	{
 		onCollisionActions.erase(std::remove_if
@@ -34,6 +35,7 @@ namespace GameEngine
 	{
 		onTriggerEnterActions.push_back(onTriggerEnterAction);
 	}
+	
 	void ColliderComponent::UnsubscribeTriggerEnter(std::function<void(Trigger)> onTriggerEnterAction)
 	{
 		onTriggerEnterActions.erase(std::remove_if
@@ -51,6 +53,7 @@ namespace GameEngine
 	{
 		onTriggerExitActions.push_back(onTriggerExitAction);
 	}
+	
 	void ColliderComponent::UnsubscribeTriggerExit(std::function<void(Trigger)> onTriggerExitAction)
 	{
 		onTriggerExitActions.erase(std::remove_if
@@ -71,6 +74,7 @@ namespace GameEngine
 			onCollisionActions[i](collision);
 		}
 	}
+	
 	void ColliderComponent::OnTriggerEnter(Trigger trigger)
 	{
 		for (int i = 0; i < onTriggerEnterActions.size(); i++)
@@ -78,6 +82,7 @@ namespace GameEngine
 			onTriggerEnterActions[i](trigger);
 		}
 	}
+	
 	void ColliderComponent::OnTriggerExit(Trigger trigger)
 	{
 		for (int i = 0; i < onTriggerExitActions.size(); i++)
