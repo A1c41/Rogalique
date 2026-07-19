@@ -2,18 +2,21 @@
 #include "InputComponent.h"
 #include "GameObject.h"
 #include "RigidbodyComponent.h"
+#include "SpriteRenderComponent.h"
 
 namespace GameEngine
 {
-	InputComponent::InputComponent(GameObject* gameObject) : Component(gameObject)
-	{
+    InputComponent::InputComponent(GameObject* gameObject) : Component(gameObject)
+    {
 
-	}
+    }
 
     void InputComponent::Update(float fps)
     {
         verticalAxis = 0.f;
         horizontalAxis = 0.f;
+
+        auto spriteRenderer = gameObject->GetComponent<SpriteRenderComponent>();
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
@@ -27,10 +30,18 @@ namespace GameEngine
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
             horizontalAxis += 1.0f;
+            if (spriteRenderer)
+            {
+                spriteRenderer->FlipX(false);
+            }
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
             horizontalAxis -= 1.0f;
+            if (spriteRenderer)
+            {
+                spriteRenderer->FlipX(true);
+            }
         }
 
         if (horizontalAxis != 0.f && verticalAxis != 0.f)
@@ -48,18 +59,18 @@ namespace GameEngine
         }
     }
 
-	void InputComponent::Render()
-	{
+    void InputComponent::Render()
+    {
 
-	}
+    }
 
-	float InputComponent::GetHorizontalAxis() const
-	{
-		return horizontalAxis;
-	}
+    float InputComponent::GetHorizontalAxis() const
+    {
+        return horizontalAxis;
+    }
 
-	float InputComponent::GetVerticalAxis() const
-	{
-		return verticalAxis;
-	}
+    float InputComponent::GetVerticalAxis() const
+    {
+        return verticalAxis;
+    }
 }
