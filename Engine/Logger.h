@@ -5,6 +5,8 @@
 #include <vector>
 #include <mutex>
 #include <unordered_map>
+#include <memory>
+#include <cassert>
 
 enum class LogLevel { LOG_INFO, LOG_WARNING, LOG_ERROR };
 
@@ -38,6 +40,9 @@ private:
 public:
     FileSink(const std::string& filename) {
         logFile.open(filename, std::ios::app);
+        if (!logFile.is_open()) {
+            throw std::runtime_error("Failed to open log file: " + filename);
+        }
     }
 
     void log(LogLevel level, const std::string& message) override {
@@ -68,13 +73,18 @@ private:
 
 public:
     void addSink(std::shared_ptr<LogSink> sink) {
+        if (!sink) {
+            throw std::invalid_argument("Cannot add null sink to logger");
+        }
         sinks.push_back(sink);
     }
 
     void log(LogLevel level, const std::string& message) {
         std::lock_guard<std::mutex> lock(logMutex);
         for (auto& sink : sinks) {
-            sink->log(level, message);
+            if (sink) {
+                sink->log(level, message);
+            }
         }
     }
 
@@ -89,6 +99,11 @@ private:
     std::shared_ptr<Logger> defaultLogger;
     std::mutex registryMutex;
 
+    LoggerRegistry() {
+        defaultLogger = std::make_shared<Logger>();
+        defaultLogger->addSink(std::make_shared<ConsoleSink>());
+    }
+
 public:
     static LoggerRegistry& getInstance() {
         static LoggerRegistry instance;
@@ -97,17 +112,27 @@ public:
 
     std::shared_ptr<Logger> getLogger(const std::string& name) {
         std::lock_guard<std::mutex> lock(registryMutex);
-        if (loggers.find(name) != loggers.end()) {
-            return loggers[name];
+        auto it = loggers.find(name);
+        if (it != loggers.end()) {
+            return it->second;
+        }
+        if (defaultLogger) {
+            defaultLogger->warn("Logger '" + name + "' not found, using default logger");
         }
         return defaultLogger;
     }
 
     void setDefaultLogger(std::shared_ptr<Logger> logger) {
+        if (!logger) {
+            throw std::invalid_argument("Cannot set null default logger");
+        }
         defaultLogger = logger;
     }
 
     void registerLogger(const std::string& name, std::shared_ptr<Logger> logger) {
+        if (!logger) {
+            throw std::invalid_argument("Cannot register null logger for: " + name);
+        }
         std::lock_guard<std::mutex> lock(registryMutex);
         loggers[name] = logger;
     }
@@ -116,3 +141,13 @@ public:
 #define LOG_INFO(message) LoggerRegistry::getInstance().getLogger("global")->info(message)
 #define LOG_WARN(message) LoggerRegistry::getInstance().getLogger("global")->warn(message)
 #define LOG_ERROR(message) LoggerRegistry::getInstance().getLogger("global")->error(message)
+
+#define ASSERT_MSG(condition, message) \
+    do { \
+        if (!(condition)) { \
+            LOG_ERROR(std::string("ASSERT FAILED: ") + message); \
+            assert(condition && message); \
+        } \
+    } while(0)
+
+#define ASSERT(condition) ASSERT_MSG(condition, #condition)
