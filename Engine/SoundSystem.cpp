@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "SoundSystem.h"
+#include "Logger.h"
 
 namespace GameEngine
 {
@@ -11,25 +12,34 @@ namespace GameEngine
 
     SoundSystem::~SoundSystem()
     {
+        LOG_INFO("SoundSystem destroyed, clearing all sounds");
         Clear();
     }
 
     void SoundSystem::LoadMusic(const std::string& name, const std::string& sourcePath)
     {
-        if (musicMap.find(name) != musicMap.end())
+        if (musicMap.find(name) != musicMap.end()) {
+            LOG_WARN("Music already loaded: " + name);
             return;
+        }
 
         sf::Music* music = new sf::Music();
+        if (!music) {
+            LOG_ERROR("Failed to allocate music: " + name);
+            throw std::bad_alloc();
+        }
+
         if (music->openFromFile(sourcePath))
         {
             music->setVolume(masterVolume);
             musicMap[name] = music;
-            std::cout << "Loaded music: " << name << std::endl;
+            LOG_INFO("Loaded music: " + name + " from " + sourcePath);
         }
         else
         {
             delete music;
-            std::cout << "Failed to load music: " << sourcePath << std::endl;
+            LOG_ERROR("Failed to load music from file: " + sourcePath);
+            throw std::runtime_error("Failed to load music: " + sourcePath);
         }
     }
 
@@ -41,7 +51,11 @@ namespace GameEngine
             it->second->setLoop(loop);
             it->second->setVolume(masterVolume);
             it->second->play();
-            std::cout << "Playing music: " << name << std::endl;
+            LOG_INFO("Playing music: " + name + " (loop: " + (loop ? "true" : "false") + ")");
+        }
+        else
+        {
+            LOG_WARN("Attempted to play non-existent music: " + name);
         }
     }
 
@@ -51,7 +65,11 @@ namespace GameEngine
         if (it != musicMap.end())
         {
             it->second->stop();
-            std::cout << "Stopped music: " << name << std::endl;
+            LOG_INFO("Stopped music: " + name);
+        }
+        else
+        {
+            LOG_WARN("Attempted to stop non-existent music: " + name);
         }
     }
 
@@ -61,6 +79,11 @@ namespace GameEngine
         if (it != musicMap.end())
         {
             it->second->pause();
+            LOG_INFO("Paused music: " + name);
+        }
+        else
+        {
+            LOG_WARN("Attempted to pause non-existent music: " + name);
         }
     }
 
@@ -72,6 +95,10 @@ namespace GameEngine
             float normalizedVolume = (volume / 100.0f) * masterVolume;
             it->second->setVolume(normalizedVolume);
         }
+        else
+        {
+            LOG_WARN("Attempted to set volume for non-existent music: " + name);
+        }
     }
 
     void SoundSystem::SetMasterVolume(float volume)
@@ -80,6 +107,7 @@ namespace GameEngine
         if (volume > 100) volume = 100;
 
         masterVolume = volume;
+        LOG_INFO("Master volume set to: " + std::to_string(volume));
         UpdateMusicVolumes();
     }
 
@@ -98,19 +126,27 @@ namespace GameEngine
 
     void SoundSystem::LoadSound(const std::string& name, const std::string& sourcePath)
     {
-        if (soundBufferMap.find(name) != soundBufferMap.end())
+        if (soundBufferMap.find(name) != soundBufferMap.end()) {
+            LOG_WARN("Sound buffer already loaded: " + name);
             return;
+        }
 
         sf::SoundBuffer* buffer = new sf::SoundBuffer();
+        if (!buffer) {
+            LOG_ERROR("Failed to allocate sound buffer: " + name);
+            throw std::bad_alloc();
+        }
+
         if (buffer->loadFromFile(sourcePath))
         {
             soundBufferMap[name] = buffer;
-            std::cout << "Loaded sound: " << name << std::endl;
+            LOG_INFO("Loaded sound: " + name + " from " + sourcePath);
         }
         else
         {
             delete buffer;
-            std::cout << "Failed to load sound: " << sourcePath << std::endl;
+            LOG_ERROR("Failed to load sound from file: " + sourcePath);
+            throw std::runtime_error("Failed to load sound: " + sourcePath);
         }
     }
 
@@ -127,13 +163,20 @@ namespace GameEngine
         if (it != soundBufferMap.end())
         {
             sf::Sound* sound = new sf::Sound();
-            sound->setBuffer(*it->second);
+            if (!sound) {
+                LOG_ERROR("Failed to allocate sound instance for: " + name);
+                throw std::bad_alloc();
+            }
 
+            sound->setBuffer(*it->second);
             float normalizedVolume = (volume / 100.0f) * masterVolume;
             sound->setVolume(normalizedVolume);
-
             sound->play();
             activeSounds.push_back(sound);
+        }
+        else
+        {
+            LOG_WARN("Attempted to play non-existent sound: " + name);
         }
     }
 
@@ -144,6 +187,7 @@ namespace GameEngine
 
     void SoundSystem::CleanupFinishedSounds()
     {
+        auto initialSize = activeSounds.size();
         activeSounds.erase(
             std::remove_if(activeSounds.begin(), activeSounds.end(),
                 [](sf::Sound* sound) {
@@ -156,10 +200,16 @@ namespace GameEngine
                 }),
             activeSounds.end()
         );
+
+        if (activeSounds.size() != initialSize) {
+            LOG_INFO("Cleaned up " + std::to_string(initialSize - activeSounds.size()) + " finished sounds");
+        }
     }
 
     void SoundSystem::Clear()
     {
+        LOG_INFO("Clearing all sounds and music");
+
         for (auto& pair : musicMap)
         {
             pair.second->stop();
@@ -179,5 +229,7 @@ namespace GameEngine
             delete sound;
         }
         activeSounds.clear();
+
+        LOG_INFO("All sounds and music cleared");
     }
 }

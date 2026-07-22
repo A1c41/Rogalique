@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <random>
 #include <algorithm>
+#include "Logger.h"
 
 namespace Rogalique
 {
@@ -18,11 +19,17 @@ namespace Rogalique
     void LevelLoader::LoadAllLevels(const std::string& folderPath)
     {
         levels.clear();
+        LOG_INFO("Loading levels from folder: " + folderPath);
 
         namespace fs = std::filesystem;
 
         try
         {
+            if (!fs::exists(folderPath)) {
+                LOG_ERROR("Level folder does not exist: " + folderPath);
+                throw std::runtime_error("Level folder does not exist: " + folderPath);
+            }
+
             for (const auto& entry : fs::directory_iterator(folderPath))
             {
                 if (entry.is_regular_file())
@@ -34,7 +41,11 @@ namespace Rogalique
                         if (LoadLevelFromFile(filePath, level))
                         {
                             levels.push_back(level);
-                            std::cout << "Loaded level: " << entry.path().filename().string() << std::endl;
+                            LOG_INFO("Loaded level: " + entry.path().filename().string());
+                        }
+                        else
+                        {
+                            LOG_WARN("Failed to load level from file: " + filePath);
                         }
                     }
                 }
@@ -42,24 +53,26 @@ namespace Rogalique
         }
         catch (const std::exception& e)
         {
-            std::cout << "Error loading levels: " << e.what() << std::endl;
+            LOG_ERROR("Error loading levels: " + std::string(e.what()));
         }
 
-        std::cout << "Total levels loaded: " << levels.size() << std::endl;
+        LOG_INFO("Total levels loaded: " + std::to_string(levels.size()));
     }
 
     bool LevelLoader::LoadLevelFromFile(const std::string& filePath, LevelData& outData)
     {
+        LOG_INFO("Loading level from file: " + filePath);
+
         std::ifstream file(filePath);
         if (!file.is_open())
         {
-            std::cout << "Failed to open file: " << filePath << std::endl;
+            LOG_ERROR("Failed to open file: " + filePath);
             return false;
         }
 
         outData.grid.clear();
         outData.playerStart = { 0, 0 };
-        outData.enemyStarts.clear();  // Изменено
+        outData.enemyStarts.clear();
 
         std::string line;
         int row = 0;
@@ -79,16 +92,17 @@ namespace Rogalique
 
         if (outData.grid.empty())
         {
-            std::cout << "Empty level file: " << filePath << std::endl;
+            LOG_ERROR("Empty level file: " + filePath);
             return false;
         }
 
-        outData.height = outData.grid.size();
-        outData.width = outData.grid[0].size();
+        outData.height = static_cast<int>(outData.grid.size());
+        outData.width = static_cast<int>(outData.grid[0].size());
         outData.tileSize = 32;
 
         ParseLevelGrid(outData);
 
+        LOG_INFO("Level loaded: " + std::to_string(outData.width) + "x" + std::to_string(outData.height));
         return true;
     }
 
@@ -98,8 +112,18 @@ namespace Rogalique
 
         for (int y = 0; y < data.height; y++)
         {
+            if (y >= static_cast<int>(data.grid.size())) {
+                LOG_ERROR("Grid height mismatch at row " + std::to_string(y));
+                break;
+            }
+
             for (int x = 0; x < data.width; x++)
             {
+                if (x >= static_cast<int>(data.grid[y].size())) {
+                    LOG_ERROR("Grid width mismatch at position (" + std::to_string(x) + ", " + std::to_string(y) + ")");
+                    break;
+                }
+
                 char c = data.grid[y][x];
 
                 float posX = x * data.tileSize + data.tileSize / 2.0f;
@@ -109,11 +133,13 @@ namespace Rogalique
                 {
                     data.playerStart = { posX, posY };
                     data.grid[y][x] = '.';
+                    LOG_INFO("Player start found at: (" + std::to_string(posX) + ", " + std::to_string(posY) + ")");
                 }
                 else if (c == 'E')
                 {
                     data.enemyStarts.push_back({ posX, posY });
                     data.grid[y][x] = '.';
+                    LOG_INFO("Enemy start found at: (" + std::to_string(posX) + ", " + std::to_string(posY) + ")");
                 }
             }
         }
@@ -123,6 +149,7 @@ namespace Rogalique
     {
         if (levels.empty())
         {
+            LOG_WARN("No levels loaded, using hardcoded default level");
             LevelData empty;
             empty.grid = {
                 "################################",
@@ -136,7 +163,7 @@ namespace Rogalique
                 "#.......#......................#",
                 "#.......#......................#",
                 "#.......#......................#",
-                "##########..#################",
+                "##########..####################",
                 "#..............................#",
                 "#..........#...................#",
                 "#..........#...................#",
@@ -146,7 +173,7 @@ namespace Rogalique
                 "#..........#...#...............#",
                 "#.......E..#...#...............#",
                 "#..........#...#################",
-                "#..........#........E.........#",
+                "#..........#........E..........#",
                 "#..............................#",
                 "################################"
             };
@@ -157,13 +184,13 @@ namespace Rogalique
             empty.enemyStarts.clear();
             empty.enemyStarts.push_back({ 10 * 32 + 16, 2 * 32 + 16 });
             empty.enemyStarts.push_back({ 7 * 32 + 16, 20 * 32 + 16 });
-            empty.enemyStarts.push_back({ 21 * 32 + 16, 21 * 32 + 16 }); 
+            empty.enemyStarts.push_back({ 21 * 32 + 16, 21 * 32 + 16 });
             return empty;
         }
 
         static std::random_device rd;
         static std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dis(0, levels.size() - 1);
+        std::uniform_int_distribution<> dis(0, static_cast<int>(levels.size()) - 1);
 
         return levels[dis(gen)];
     }
@@ -174,6 +201,7 @@ namespace Rogalique
         {
             return levels[index];
         }
+        LOG_ERROR("Level index out of bounds: " + std::to_string(index) + " (total: " + std::to_string(levels.size()) + ")");
         return LevelData();
     }
 

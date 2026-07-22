@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SpriteColliderComponent.h"
 #include "GameObject.h"
+#include "Logger.h"
 
 namespace GameEngine
 {
@@ -9,15 +10,18 @@ namespace GameEngine
 		auto spriteRenderer = gameObject->GetComponent<SpriteRenderComponent>();
 		if (spriteRenderer == nullptr)
 		{
-			std::cout << "SpriteRenderer required to SpriteCollider." << std::endl;
+			LOG_ERROR("SpriteRenderer required for SpriteCollider on GameObject: " + gameObject->GetName());
 			gameObject->RemoveComponent(this);
-			return;
+			throw std::runtime_error("SpriteColliderComponent requires SpriteRenderComponent");
 		}
 
-		sprite = gameObject->GetComponent<SpriteRenderComponent>()->GetSprite();
+		sprite = spriteRenderer->GetSprite();
+		ASSERT_MSG(sprite != nullptr, "Sprite is null after getting from SpriteRenderComponent");
+
 		PhysicsSystem::Instance()->Subscribe(this);
+		LOG_INFO("SpriteColliderComponent created for: " + gameObject->GetName());
 	}
-	
+
 	SpriteColliderComponent::~SpriteColliderComponent()
 	{
 		if (&bounds != nullptr)
@@ -29,11 +33,17 @@ namespace GameEngine
 
 	void SpriteColliderComponent::Update(float deltaTime)
 	{
+		if (!sprite) {
+			LOG_ERROR("Sprite is null in SpriteColliderComponent update");
+			return;
+		}
 		bounds = sprite->getGlobalBounds();
 	}
-	
+
 	void SpriteColliderComponent::Render()
 	{
+		if (!sprite) return;
+
 		sf::RectangleShape rectangle(sf::Vector2f(bounds.width, bounds.height));
 		rectangle.setPosition(bounds.left, bounds.top);
 		rectangle.setFillColor(sf::Color::Transparent);

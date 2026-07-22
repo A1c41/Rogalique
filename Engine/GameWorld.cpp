@@ -4,6 +4,7 @@
 #include "TransformComponent.h"
 #include "PhysicsSystem.h"
 #include "ColliderComponent.h"
+#include "Logger.h"
 
 namespace GameEngine
 {
@@ -56,14 +57,24 @@ namespace GameEngine
 	GameObject* GameWorld::CreateGameObject()
 	{
 		GameObject* newGameObject = new GameObject();
+		if (!newGameObject) {
+			LOG_ERROR("Failed to create new GameObject");
+			throw std::bad_alloc();
+		}
 		gameObjects.push_back(newGameObject);
+		LOG_INFO("Created GameObject: " + newGameObject->GetName());
 		return newGameObject;
 	}
 
 	GameObject* GameWorld::CreateGameObject(std::string name)
 	{
 		GameObject* newGameObject = new GameObject(name);
+		if (!newGameObject) {
+			LOG_ERROR("Failed to create GameObject: " + name);
+			throw std::bad_alloc();
+		}
 		gameObjects.push_back(newGameObject);
+		LOG_INFO("Created GameObject: " + name);
 		return newGameObject;
 	}
 
@@ -71,12 +82,19 @@ namespace GameEngine
 	{
 		if (gameObject)
 		{
+			LOG_INFO("Marking GameObject for destruction: " + gameObject->GetName());
 			markedToDestroyGameObjects.push_back(gameObject);
+		}
+		else
+		{
+			LOG_WARN("Attempted to destroy null GameObject");
 		}
 	}
 
 	void GameWorld::Clear()
 	{
+		LOG_INFO("Clearing GameWorld, objects count: " + std::to_string(gameObjects.size()));
+
 		for (int i = gameObjects.size() - 1; i >= 0; i--)
 		{
 			if (gameObjects[i] == nullptr)
@@ -91,6 +109,7 @@ namespace GameEngine
 		}
 
 		fixedCounter = 0.f;
+		LOG_INFO("GameWorld cleared");
 	}
 
 	void GameWorld::Print() const
@@ -112,8 +131,12 @@ namespace GameEngine
 	{
 		if (!gameObject)
 		{
+			LOG_WARN("Attempted to immediately destroy null GameObject");
 			return;
 		}
+
+		std::string objName = gameObject->GetName();
+		LOG_INFO("Immediately destroying GameObject: " + objName);
 
 		auto parent = gameObject->GetComponent<TransformComponent>()->GetParent();
 		if (parent != nullptr)
@@ -124,6 +147,7 @@ namespace GameEngine
 		for (auto transform : gameObject->GetComponentsInChildren<TransformComponent>())
 		{
 			GameObject* gameObjectToDelete = transform->GetGameObject();
+			ASSERT_MSG(gameObjectToDelete != nullptr, "Transform component has no owner GameObject");
 
 			gameObjects.erase(std::remove_if(gameObjects.begin(), gameObjects.end(),
 				[gameObjectToDelete](GameObject* obj) { return obj == gameObjectToDelete; }),

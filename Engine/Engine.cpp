@@ -3,6 +3,7 @@
 #include <iostream>
 #include "GameWorld.h"
 #include "RenderSystem.h"
+#include "Logger.h"
 
 namespace GameEngine
 {
@@ -16,12 +17,20 @@ namespace GameEngine
 	{
 		unsigned int seed = (unsigned int)time(nullptr);
 		srand(seed);
+		LOG_INFO("Engine initialized with seed: " + std::to_string(seed));
 	}
 
 	void Engine::Run()
 	{
 		sf::Clock gameClock;
 		sf::Event event;
+
+		LOG_INFO("Engine main loop started");
+
+		if (!RenderSystem::Instance()->GetMainWindow().isOpen()) {
+			LOG_ERROR("Main window is not open at start of Run()");
+			throw std::runtime_error("Main window is not open");
+		}
 
 		while (RenderSystem::Instance()->GetMainWindow().isOpen())
 		{
@@ -32,12 +41,14 @@ namespace GameEngine
 			{
 				if (event.type == sf::Event::Closed)
 				{
+					LOG_INFO("Window close event received");
 					RenderSystem::Instance()->GetMainWindow().close();
 				}
 			}
 
 			if (!RenderSystem::Instance()->GetMainWindow().isOpen())
 			{
+				LOG_INFO("Window closed, exiting main loop");
 				break;
 			}
 
@@ -50,5 +61,7 @@ namespace GameEngine
 
 			RenderSystem::Instance()->GetMainWindow().display();
 		}
+
+		LOG_INFO("Engine main loop ended");
 	}
 }

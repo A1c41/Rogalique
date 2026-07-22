@@ -1,0 +1,38 @@
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully
+[INFO] Created 2 enemies
+[INFO] Starting engine
+[INFO] Application closing normally
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
