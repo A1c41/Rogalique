@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "ResourceSystem.h"
 #include "PhysicsSystem.h"
+#include "HealthComponent.h"
 #include "Logger.h"
 
 namespace Rogalique
@@ -44,7 +45,21 @@ namespace Rogalique
         seeker->SetDetectionRadius(300.0f);
         seeker->SetSpeed(150.0f);
 
-        LOG_INFO("Enemy created successfully");
+        auto health = gameObject->AddComponent<GameEngine::HealthComponent>();
+        if (!health) {
+            LOG_ERROR("Failed to add HealthComponent to enemy");
+            throw std::runtime_error("Failed to add HealthComponent to enemy");
+        }
+        health->SetMaxHealth(50.0f);
+        health->SetCurrentHealth(50.0f);
+        health->SetArmor(5.0f);
+        health->SetShowHealthBar(true);
+        health->SetHealthBarOffset({ -25.0f, -30.0f });
+        health->SetHealthBarSize({ 50.0f, 6.0f });
+        health->SetIsPlayer(false);
+
+        LOG_INFO("Enemy created successfully with HP: " + std::to_string(health->GetCurrentHealth()) +
+            " Armor: " + std::to_string(health->GetArmor()));
     }
 
     Enemy::~Enemy()

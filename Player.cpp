@@ -3,6 +3,7 @@
 #include "SpriteColliderComponent.h"
 #include "RigidbodyComponent.h"
 #include "PhysicsSystem.h"
+#include "HealthComponent.h"
 #include "Logger.h"
 
 namespace Rogalique
@@ -60,7 +61,21 @@ namespace Rogalique
         }
         collider->SetTrigger(false);
 
-        LOG_INFO("Player created successfully");
+        auto health = gameObject->AddComponent<GameEngine::HealthComponent>();
+        if (!health) {
+            LOG_ERROR("Failed to add HealthComponent to player");
+            throw std::runtime_error("Failed to add HealthComponent to player");
+        }
+        health->SetMaxHealth(100.0f);
+        health->SetCurrentHealth(100.0f);
+        health->SetArmor(10.0f);
+        health->SetShowHealthBar(true);
+        health->SetHealthBarOffset({ -25.0f, -30.0f });
+        health->SetHealthBarSize({ 50.0f, 6.0f });
+        health->SetIsPlayer(false);
+
+        LOG_INFO("Player created successfully with HP: " + std::to_string(health->GetCurrentHealth()) +
+            " Armor: " + std::to_string(health->GetArmor()));
     }
 
     GameEngine::GameObject* Player::GetGameObject()
