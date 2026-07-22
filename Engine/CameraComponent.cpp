@@ -2,6 +2,7 @@
 #include "CameraComponent.h"
 #include "TransformComponent.h"
 #include "GameObject.h"
+#include "Logger.h"
 
 namespace GameEngine
 {
