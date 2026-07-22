@@ -116,9 +116,6 @@ public:
         if (it != loggers.end()) {
             return it->second;
         }
-        if (defaultLogger) {
-            defaultLogger->warn("Logger '" + name + "' not found, using default logger");
-        }
         return defaultLogger;
     }
 

@@ -4,7 +4,9 @@
 #include "RigidbodyComponent.h"
 #include "PhysicsSystem.h"
 #include "HealthComponent.h"
+#include "CombatComponent.h"
 #include "Logger.h"
+#include <SFML/Window.hpp>
 
 namespace Rogalique
 {
@@ -73,6 +75,15 @@ namespace Rogalique
         health->SetHealthBarOffset({ -25.0f, -30.0f });
         health->SetHealthBarSize({ 50.0f, 6.0f });
         health->SetIsPlayer(false);
+
+        auto combat = gameObject->AddComponent<GameEngine::CombatComponent>();
+        if (!combat) {
+            LOG_ERROR("Failed to add CombatComponent to player");
+            throw std::runtime_error("Failed to add CombatComponent to player");
+        }
+        combat->SetDamage(25.0f);
+        combat->SetAttackRange(80.0f);
+        combat->SetAttackCooldown(0.5f);
 
         LOG_INFO("Player created successfully with HP: " + std::to_string(health->GetCurrentHealth()) +
             " Armor: " + std::to_string(health->GetArmor()));

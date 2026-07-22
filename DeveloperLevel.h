@@ -21,6 +21,7 @@ namespace Rogalique
         void Start() override;
         void Restart() override;
         void Stop() override;
+        void Update(float fps);
 
     private:
         std::shared_ptr<Player> player;
@@ -29,5 +30,10 @@ namespace Rogalique
 
         Vector2Df playerStartPosition = { 400, 360 };
         Vector2Df enemyStartPosition = { 700, 360 };
+
+        void HandlePlayerAttack();
+        void HandleEnemyAttacks();
+        void LoadNewLevel();
+        void SpawnEnemies();
     };
 }

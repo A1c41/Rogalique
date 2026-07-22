@@ -6,6 +6,7 @@
 #include "DeveloperLevel.h"
 #include "Matrix2D.h"
 #include "Logger.h"
+#include "GameWorld.h"
 
 using namespace Rogalique;
 
@@ -20,7 +21,7 @@ int main()
             logger->addSink(std::make_shared<FileSink>("rogalique.log"));
         }
         catch (const std::exception& e) {
-            LOG_WARN("Failed to create file sink: " + std::string(e.what()));
+            logger->warn("Failed to create file sink: " + std::string(e.what()));
         }
         LoggerRegistry::getInstance().registerLogger("global", logger);
 
@@ -37,8 +38,38 @@ int main()
         auto developerLevel = std::make_shared<DeveloperLevel>();
         developerLevel->Start();
 
-        LOG_INFO("Starting engine");
-        GameEngine::Engine::Instance()->Run();
+        LOG_INFO("Starting game loop");
+        sf::Clock gameClock;
+        sf::Event event;
+
+        while (GameEngine::RenderSystem::Instance()->GetMainWindow().isOpen())
+        {
+            sf::Time dt = gameClock.restart();
+            float fps = dt.asSeconds();
+
+            while (GameEngine::RenderSystem::Instance()->GetMainWindow().pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                {
+                    GameEngine::RenderSystem::Instance()->GetMainWindow().close();
+                }
+            }
+
+            if (!GameEngine::RenderSystem::Instance()->GetMainWindow().isOpen())
+            {
+                break;
+            }
+
+            GameEngine::RenderSystem::Instance()->GetMainWindow().clear();
+
+            developerLevel->Update(fps);
+            GameEngine::GameWorld::Instance()->Update(fps);
+            GameEngine::GameWorld::Instance()->FixedUpdate(fps);
+            GameEngine::GameWorld::Instance()->Render();
+            GameEngine::GameWorld::Instance()->LateUpdate();
+
+            GameEngine::RenderSystem::Instance()->GetMainWindow().display();
+        }
 
         LOG_INFO("Application closing normally");
         return 0;

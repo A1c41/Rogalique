@@ -2,6 +2,7 @@
 #include "ResourceSystem.h"
 #include "PhysicsSystem.h"
 #include "HealthComponent.h"
+#include "CombatComponent.h"
 #include "Logger.h"
 
 namespace Rogalique
@@ -58,22 +59,25 @@ namespace Rogalique
         health->SetHealthBarSize({ 50.0f, 6.0f });
         health->SetIsPlayer(false);
 
+        auto combat = gameObject->AddComponent<GameEngine::CombatComponent>();
+        if (!combat) {
+            LOG_ERROR("Failed to add CombatComponent to enemy");
+            throw std::runtime_error("Failed to add CombatComponent to enemy");
+        }
+        combat->SetDamage(10.0f);
+        combat->SetAttackRange(40.0f);
+        combat->SetAttackCooldown(2.0f);
+
         LOG_INFO("Enemy created successfully with HP: " + std::to_string(health->GetCurrentHealth()) +
             " Armor: " + std::to_string(health->GetArmor()));
     }
 
     Enemy::~Enemy()
     {
-        if (gameObject)
-        {
-            GameEngine::GameWorld::Instance()->DestroyGameObject(gameObject);
-            LOG_INFO("Enemy destroyed");
-        }
     }
 
     GameEngine::GameObject* Enemy::GetGameObject()
     {
-        ASSERT_MSG(gameObject != nullptr, "Enemy GameObject is null");
         return gameObject;
     }
 

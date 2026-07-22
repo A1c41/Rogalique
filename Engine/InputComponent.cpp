@@ -15,6 +15,7 @@ namespace GameEngine
     {
         verticalAxis = 0.f;
         horizontalAxis = 0.f;
+        leftMousePressed = false;
 
         auto spriteRenderer = gameObject->GetComponent<SpriteRenderComponent>();
 
@@ -42,6 +43,11 @@ namespace GameEngine
             {
                 spriteRenderer->FlipX(true);
             }
+        }
+
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+            leftMousePressed = true;
         }
 
         if (horizontalAxis != 0.f && verticalAxis != 0.f)
@@ -72,5 +78,10 @@ namespace GameEngine
     float InputComponent::GetVerticalAxis() const
     {
         return verticalAxis;
+    }
+
+    bool InputComponent::IsLeftMousePressed() const
+    {
+        return leftMousePressed;
     }
 }

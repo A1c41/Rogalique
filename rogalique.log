@@ -191,3 +191,933 @@
 [INFO] Application closing normally
 [INFO] Enemy destroyed
 [INFO] Enemy destroyed
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (128.000000, -176.000000)
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Created 2 enemies
+[INFO] Starting engine
+[INFO] Application closing normally
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started
+[INFO] Starting game loop
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] All enemies defeated, loading new level
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Application closing normally
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started
+[INFO] Starting game loop
+[INFO] Player attacked enemy
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] All enemies defeated, loading new level
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Application closing normally
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started
+[INFO] Starting game loop
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Player died, restarting level
+[INFO] Restarting developer level
+[INFO] Stopping developer level
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started
+[INFO] Starting game loop
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Player attacked enemy
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Player attacked enemy
+[INFO] Enemy attacked player
+[INFO] Player attacked enemy
+[INFO] Player attacked enemy
+[INFO] Enemy destroyed
+[INFO] Application closing normally
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (128.000000, -176.000000)
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started
+[INFO] Starting game loop
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Enemy attacked player
+[INFO] Player died, restarting level
+[INFO] Restarting developer level
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Starting developer level
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] All enemies defeated, generating new level
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Application closing normally
+[INFO] Enemy destroyed
+[INFO] Enemy destroyed
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] All enemies defeated, generating new level
+[INFO] Level generated: 178 walls, 614 floors
+[INFO] Player start: (128.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Application closing normally
+[INFO] Enemy destructor called
+[INFO] Enemy destructor called
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 173 walls, 595 floors
+[INFO] Player start: (-112.000000, -176.000000)
+[INFO] Enemy count: 3
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started with 3 enemies
+[INFO] Starting game loop
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] Enemy attacked player, player health: 73.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] All enemies defeated, generating new level
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 173 walls, 595 floors
+[INFO] Player start: (-112.000000, -176.000000)
+[INFO] Enemy count: 3
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started with 3 enemies
+[INFO] Starting game loop
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] Enemy attacked player, player health: 73.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy destructor called
+[INFO] All enemies defeated, generating new level
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 173 walls, 595 floors
+[INFO] Player start: (-112.000000, -176.000000)
+[INFO] Enemy count: 3
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started with 3 enemies
+[INFO] Application closing normally
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 178 walls, 614 floors
+[INFO] Player start: (128.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (128.000000, -176.000000)
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 73.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Application closing normally
+[INFO] Setting up main window
+[INFO] Loading textures
+[INFO] Creating developer level
+[INFO] DeveloperLevel constructor
+[INFO] Loading levels from folder: Resources/Levels
+[INFO] Loading level from file: Resources/Levels\LevelOne_1.txt
+[INFO] Enemy start found at: (464.000000, 80.000000)
+[INFO] Player start found at: (400.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Enemy start found at: (656.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_1.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_2.txt
+[INFO] Enemy start found at: (496.000000, 80.000000)
+[INFO] Player start found at: (656.000000, 208.000000)
+[INFO] Enemy start found at: (272.000000, 624.000000)
+[INFO] Level loaded: 33x24
+[INFO] Loaded level: LevelOne_2.txt
+[INFO] Loading level from file: Resources/Levels\LevelOne_3.txt
+[INFO] Player start found at: (816.000000, 208.000000)
+[INFO] Enemy start found at: (688.000000, 592.000000)
+[INFO] Enemy start found at: (688.000000, 688.000000)
+[INFO] Level loaded: 32x24
+[INFO] Loaded level: LevelOne_3.txt
+[INFO] Total levels loaded: 3
+[INFO] Starting developer level
+[INFO] Level generated: 178 walls, 614 floors
+[INFO] Player start: (128.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (128.000000, -176.000000)
+[INFO] Creating enemy at position: (-32.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-256.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Starting game loop
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 173 walls, 595 floors
+[INFO] Player start: (-112.000000, -176.000000)
+[INFO] Enemy count: 3
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started with 3 enemies
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Enemy attacked player, player health: 73.000000
+[INFO] Enemy attacked player, player health: 64.000000
+[INFO] Enemy attacked player, player health: 55.000000
+[INFO] Enemy attacked player, player health: 46.000000
+[INFO] Enemy attacked player, player health: 37.000000
+[INFO] Enemy attacked player, player health: 28.000000
+[INFO] Enemy attacked player, player health: 19.000000
+[INFO] Enemy attacked player, player health: 10.000000
+[INFO] Enemy attacked player, player health: 1.000000
+[INFO] Enemy attacked player, player health: 0.000000
+[INFO] Player died, restarting level
+[INFO] Restarting developer level
+[INFO] Starting developer level
+[INFO] Level generated: 173 walls, 595 floors
+[INFO] Player start: (-112.000000, -176.000000)
+[INFO] Enemy count: 3
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (-112.000000, -176.000000)
+[INFO] Creating enemy at position: (-48.000000, -304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (-240.000000, 240.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (144.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 3 enemies
+[INFO] Developer level started with 3 enemies
+[INFO] Enemy attacked player, player health: 91.000000
+[INFO] Enemy attacked player, player health: 82.000000
+[INFO] Enemy attacked player, player health: 73.000000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 64.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Enemy attacked player, player health: 55.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] Player attacked enemy, enemy health: 26.250000
+[INFO] Enemy attacked player, player health: 46.000000
+[INFO] Player attacked enemy, enemy health: 2.500000
+[INFO] Player attacked enemy, enemy health: 0.000000
+[INFO] Removing dead enemy
+[INFO] All enemies defeated, generating new level
+[INFO] Starting developer level
+[INFO] Level generated: 250 walls, 518 floors
+[INFO] Player start: (304.000000, -176.000000)
+[INFO] Enemy count: 2
+[INFO] Creating player
+[INFO] Player created successfully with HP: 100.000000 Armor: 10.000000
+[INFO] Player placed at: (304.000000, -176.000000)
+[INFO] Creating enemy at position: (176.000000, 208.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Creating enemy at position: (176.000000, 304.000000)
+[INFO] Enemy created successfully with HP: 50.000000 Armor: 5.000000
+[INFO] Spawned 2 enemies
+[INFO] Developer level started with 2 enemies
+[INFO] Application closing normally

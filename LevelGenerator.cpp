@@ -1,4 +1,5 @@
 #include "LevelGenerator.h"
+#include "Logger.h"
 
 namespace Rogalique
 {
@@ -27,7 +28,7 @@ namespace Rogalique
 
         if (levelData.grid.empty())
         {
-            std::cout << "Level data is empty!" << std::endl;
+            LOG_WARN("Level data is empty!");
             return false;
         }
 
@@ -76,9 +77,9 @@ namespace Rogalique
             }
         }
 
-        std::cout << "Level generated: " << walls.size() << " walls, " << floors.size() << " floors" << std::endl;
-        std::cout << "Player start: (" << playerStart.x << ", " << playerStart.y << ")" << std::endl;
-        std::cout << "Enemy count: " << enemyStarts.size() << std::endl;
+        LOG_INFO("Level generated: " + std::to_string(walls.size()) + " walls, " + std::to_string(floors.size()) + " floors");
+        LOG_INFO("Player start: (" + std::to_string(playerStart.x) + ", " + std::to_string(playerStart.y) + ")");
+        LOG_INFO("Enemy count: " + std::to_string(enemyStarts.size()));
 
         return true;
     }
@@ -129,7 +130,6 @@ namespace Rogalique
     {
         walls.clear();
         floors.clear();
-        playerStart = { 0, 0 };
         enemyStarts.clear();
     }
 }

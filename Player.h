@@ -13,6 +13,7 @@ namespace Rogalique
 	public:
 		Player();
 		GameEngine::GameObject* GetGameObject();
+		void TryAttack(GameEngine::GameObject* target);
 
 	private:
 		GameEngine::GameObject* gameObject;
